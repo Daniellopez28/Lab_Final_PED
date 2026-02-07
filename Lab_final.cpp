@@ -32,3 +32,10 @@ Estudiante* insertar(Estudiante* raiz, int carnet, const char* nombre, float not
     return raiz;
 }
 
+//funciones para mostrar los estudiantes y realizar los recorridos:
+
+void mostrarEstudiante(Estudiante* e) {
+    cout << "Carnet: " << e->carnet
+         << " Nombre: " << e->nombre
+         << " Nota: " << e->nota << endl;
+}
