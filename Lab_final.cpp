@@ -30,7 +30,7 @@ Estudiante* insertar(Estudiante* raiz, int carnet, const char* nombre, float not
         raiz->derecha = insertar(raiz->derecha, carnet, nombre, nota);
 
     return raiz;
-}
+};
 
 //funciones para mostrar los estudiantes y realizar los recorridos:
 
@@ -38,4 +38,12 @@ void mostrarEstudiante(Estudiante* e) {
     cout << "Carnet: " << e->carnet
          << " Nombre: " << e->nombre
          << " Nota: " << e->nota << endl;
-}
+};
+
+void inorden(Estudiante* raiz) {
+    if (raiz != NULL) {
+        inorden(raiz->izquierdo);
+        mostrarEstudiante(raiz);
+        inorden(raiz->derecha);
+    }
+};
