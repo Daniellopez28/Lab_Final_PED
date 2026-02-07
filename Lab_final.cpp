@@ -20,3 +20,15 @@ Estudiante* crearEstudiante(int carnet, const char* nombre, float nota) {
     return nuevo;
 }
 
+Estudiante* insertar(Estudiante* raiz, int carnet, const char* nombre, float nota) {
+    if (raiz == NULL)
+        return crearEstudiante(carnet, nombre, nota);
+
+    if (carnet < raiz->carnet)
+        raiz->izquierdo = insertar(raiz->izquierdo, carnet, nombre, nota);
+    else if (carnet > raiz->carnet)
+        raiz->derecha = insertar(raiz->derecha, carnet, nombre, nota);
+
+    return raiz;
+}
+
